@@ -163,9 +163,9 @@ const resendVerification = async(req, res)=>{
 
 const login = async (req, res)=>{
     try {
-        const {emailOrPaaword, password}= req.body
+        const {emailOrphoneNumber, password}= req.body
         
-        const findUser = await schoolModel.findOne({$or:[{name:emailOrPaaword},{email:emailOrPaaword}]})
+        const findUser = await schoolModel.findOne({$or:[{name:emailOrphoneNumber},{email:emailOrphoneNumber}]})
         if(!findUser){
             return res.status(404).json({message:'user with this email does not exist'})
         }

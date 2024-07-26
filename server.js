@@ -4,6 +4,10 @@ const port = 2000
 app.use(express.json())
 const db = require('./config/db')
 const router = require('./routers/schoolRouter')
+
+app.get("/",(req,res)=>{
+    res.send(`welcome to my first hosting`)
+})
 app.use(router)
 
 
